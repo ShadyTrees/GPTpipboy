@@ -48,39 +48,39 @@ b) InputBox - 	Lower text box that is used to input prompts to the API.
 
 						Buttons
 
-a) Archive+ - 	Moves forward through the dataframe by one index and displays the Prompt/Solution in the
+a) Archive+ - 	Moves forward through the dataframe by one index and displays the Prompt/Response in the
 		DisplayBox
 
-b) Archive- -	Moves backwards through the dataframe by one index and displays the Prompt/Solution in the
+b) Archive- -	Moves backwards through the dataframe by one index and displays the Prompt/Response in the
 		DisplayBox
 
-c) Memory - 	Transers any content from the DisplayBox into the InputBox. Useful for providing the API
+c) Last - 	Displays the last Prompt/Response pair in the archive.
+
+d) Memory - 	Transers any content from the DisplayBox into the InputBox. Useful for providing the API
 		with context from a previous prompt.
 
-d) ClrTop - 	Clears all content from the DisplayBox
+e) ClrTop - 	Clears all content from the DisplayBox
 
-e) ClrBtm - 	Clears all content from the InputBox
+f) ClrBtm - 	Clears all content from the InputBox
 
-f) Send - 	Sends the contents of InputBox to the API and displays the results in DisplayBox.
+g) Send - 	Sends the contents of InputBox to the API and displays the results in DisplayBox.
 
 
 THEORY:
 
 
 My main objective was to create a simple interface to communicate with the ChatGPT API and store the prompts and
-responses in an indexed and time stamped data format. I feel that I have succeeded in this goal. This program
-is quite barebones - there is no real text formatting, as you will notice when words parse to the next line in
-a text box. My focus was on rapid deployment and functionality, and some bells and whistles were definitely 
-spared in that regard.
+responses in an indexed and time stamped data format. I feel that I have succeeded in this goal. My focus was on rapid 
+deployment and functionality, and some bells and whistles were definitely spared in that regard.
 
 Another design decision I made, was to not hard code any previous responses into the chat prompt, due to wanting
-to make my token usage as slim as possible. I added the memory button to allow me to quickly transfer previous
-conversation into the InputBox so that I could provide context when needed. This essentially functions the same 
+to make my token usage as slim as possible. I added the memory button to allow quick transfer of previous
+conversation into the InputBox so that context can be provided when needed. This essentially functions the same 
 as adding it into the actual prompt, you just have to preface the previous prompt/responses with Prompt: or
 Response:.
 
 This functionality combined with the archive buttons, allows you to quickly display any previous prompt/response
-pair, edit or shorten it in the display box to save tokens, and then transfer it to the input box using the
+pair, edit or shorten it in the display box to save tokens, and then transfer it to the InputBox using the
 memory button, for contextual use by the API. Simply write your new prompt below this data.
 
 
@@ -91,7 +91,7 @@ DRAWBACKS:
 2) The API key is visible in the script.
 3) The entire csv file is read in numerous functions. If the file size gets too large, it may cause slowdown
    and it is recommended to start a new file if any issues arise.
-4) The text that is displayed is not formatted and words may parse to the next line in the text box.
+4) The text that is displayed is plain-text and words may parse to the next line in the text box.
 
 
 
