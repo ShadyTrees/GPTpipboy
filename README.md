@@ -73,11 +73,25 @@ My main objective was to create a simple interface to communicate with the ChatG
 responses in an indexed and time stamped data format. I feel that I have succeeded in this goal. My focus was on rapid 
 deployment and functionality, and some bells and whistles were definitely spared in that regard.
 
-Another design decision I made, was to not hard code any previous responses into the chat prompt, due to wanting
+Another design decision I made, was to not code any previous responses into the chat prompt, due to wanting
 to make my token usage as slim as possible. I added the memory button to allow quick transfer of previous
 conversation into the InputBox so that context can be provided when needed. This essentially functions the same 
-as adding it into the actual prompt, you just have to preface the previous prompt/responses with Prompt: or
-Response:.
+as adding it into the actual prompt, you just have to preface the previous prompt/responses. For example a conversation
+would look like:
+
+
+1 Prompt: Hello, ChatGPT.
+
+1 Response: Hey there! What can I help you out with today?
+
+2 Prompt: What greeting did I use in my last message?
+
+#Send here
+
+2 Response: The greeting you used was Hello.
+
+
+If you use standardized numbering, the model will pick up on that, and label the response properly on it's own.
 
 This functionality combined with the archive buttons, allows you to quickly display any previous prompt/response
 pair, edit or shorten it in the display box to save tokens, and then transfer it to the InputBox using the
